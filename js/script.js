@@ -1,25 +1,22 @@
-// Define global variables
 let todos = [];
 let username = '';
 
-// DOM elements
+// DOM
 const nameInput = document.querySelector('#name');
 const newTodoForm = document.querySelector('#task-form');
-const todoList = document.querySelector('#todo-list');
+const todoList = document.querySelector('#list-item');
 
-// Load data from localStorage
+//  localStorage
 function loadLocalStorage() {
   todos = JSON.parse(localStorage.getItem('todos')) || [];
   username = localStorage.getItem('username') || '';
 }
-
-// Save data to localStorage
 function saveLocalStorage() {
   localStorage.setItem('todos', JSON.stringify(todos));
   localStorage.setItem('username', username);
 }
 
-// Display todos on the page
+// show todos
 function displayTodos() {
   todoList.innerHTML = '';
 
@@ -30,10 +27,10 @@ function displayTodos() {
   });
 }
 
-// Create a single todo item
+// todo item
 function createTodoItem(todo) {
   const todoItem = document.createElement('div');
-  todoItem.classList.add('todo-item');
+  todoItem.classList.add('item');
 
   const label = document.createElement('label');
   const input = document.createElement('input');
@@ -47,7 +44,7 @@ function createTodoItem(todo) {
   input.checked = todo.done;
   span.classList.add('circle');
   span.classList.add(todo.category === 'personal' ? 'personal' : 'business');
-  content.classList.add('todo-content');
+  content.classList.add('all-todos');
   actions.classList.add('actions');
   edit.classList.add('edit');
   deleteButton.classList.add('delete');
@@ -121,7 +118,7 @@ window.addEventListener('load', () => {
     saveLocalStorage();
     displayTodos();
 
-    // Reset the form
+    // Reset
     e.target.reset();
   });
 

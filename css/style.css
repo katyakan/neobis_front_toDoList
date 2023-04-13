@@ -71,7 +71,7 @@ h4 {
   min-width: 0;
 }
 
-.add-task input[type="text"] {
+.add-item input[type="text"] {
   display: block;
   width: 100%;
   padding: 1rem 1.5rem;
@@ -83,14 +83,14 @@ h4 {
   margin-bottom: 1.5rem;
 }
 
-.add-task .choose {
+.add-item .choose {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.9rem;
   margin-bottom: 1.45rem;
 }
 
-.add-task .choose label {
+.add-item .choose label {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,13 +146,13 @@ input:checked ~ .circle::after {
 	opacity: 0.9;
 }
 
-.add-task .choose label div {
+.add-item .choose label div {
 	color: #313154;
 	font-size: 1.2rem;
 	margin-top: 0.5rem;
 }
 
-.add-task input[type="submit"] {
+.add-item input[type="submit"] {
 	display: block;
 	width: 100%;
 	font-size: 1.2rem;
@@ -167,16 +167,16 @@ input:checked ~ .circle::after {
 	transition: 0.2s ease-out;
 }
 
-.add-task input[type="submit"]:hover {
+.add-item input[type="submit"]:hover {
 	opacity: 0.60;
 	transform: translateY(1px);
 }
 
-.todo-list .list {
+.list-item .list {
 	margin: 1rem 0;
 }
 
-.todo-list .todo-item {
+.list-item .item {
 	display: flex;
 	align-items: center;
 	background-color: #FFF;
@@ -186,27 +186,27 @@ input:checked ~ .circle::after {
 	margin-bottom: 1rem;
 }
 
-.todo-item label {
+.item label {
 	display: block;
 	margin-right: 1rem;
 	cursor: pointer;
 }
 
-.todo-item .todo-content {
+.item .all-todos {
 	flex: 1 1 0%;
 }
 
-.todo-item .todo-content input {
+.item .all-todos input {
 	color: #313154;
 	font-size: 1.2rem;
 }
 
-.todo-item .actions {
+.item .actions {
 	display: flex;
 	align-items: center;
 }
 
-.todo-item .actions button {
+.item .actions button {
 	display: block;
 	padding: 0.5rem;
 	border-radius: 0.25rem;
@@ -215,21 +215,21 @@ input:checked ~ .circle::after {
 	transition: 0.2s ease-in-out;
 }
 
-.todo-item .actions button:hover {
+.item .actions button:hover {
 	opacity: 0.60;
 	transform: translateY(1px);
 }
 
-.todo-item .actions .edit {
+.item .actions .edit {
 	margin-right: 0.5rem;
 	background-color: #E75490;
 }
 
-.todo-item .actions .delete {
+.item .actions .delete {
 	background-color: #ff2400;
 }
 
-.todo-item.done .todo-content input {
+.item.done .all-todos input {
 	text-decoration: line-through;
 	color: #888;
 	transform: skewY(5px) scale(0.8);
